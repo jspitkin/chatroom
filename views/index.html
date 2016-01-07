@@ -5,19 +5,23 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
 	<body>
-		<input type="text" name="fname" autofocus>
 		<div id="chatPanel">
+			<div id="nameEntry">
+				<form id="userForm" action="">
+					<input id="name" autocomplete="off" /><button id="sendName">Becoming Self</button>
+				</form>
+			</div>
 			<div id="chatWindow">
 				<ul id="messages"></ul>
 			</div>
 			<div id="activeUsers">
 				<ul id="users">
-					<li id="user">Who is out there?</li>
+					<li id="user">Who out there</li>
 				</ul>
 			</div>
 			<div id="inputBox">
-				<form action="">
-					<input id="send" autocomplete="off" /><button id="sendButton">Send</button>
+				<form id="sendForm" action="">
+					<input id="send" autocomplete="off" /><button id="sendButton">Talking</button>
 				</form>
 			</div>
 		</div>

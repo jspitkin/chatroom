@@ -4,7 +4,7 @@ body {
 }
 
 #chatPanel {
-	width: 750px;
+	width: 850px;
 	height: 550px;
 	margin-left: auto;
 	margin-right: auto;
@@ -58,7 +58,9 @@ form {
 
 input {
 	border: 2px solid #00FF00;
+	background-color: #C0C0C0;
 	font-family: "eightBit";
+	margin-top: 5px;
 }
 
 #send {
@@ -66,7 +68,7 @@ input {
 	height: 30px;
 	font-size: 18px;
 	margin-right: 5px;
-	margin-left: 50px;
+	margin-left: 0px;
 }
 
 button {
@@ -105,11 +107,13 @@ button:hover {
 
 /* Users Window */
 #activeUsers {
-	width: 200px;
+	width: 300px;
 	height: 500px;
 	float: left;
 	margin-left: 10px;
 	border: 2px solid #00FF00;
+	overflow: auto;
+	overflow-x: hidden;
 }
 
 #users {
@@ -124,7 +128,43 @@ button:hover {
 	font-size: 24px;
 }
 
+#users li:nth-child(odd) { 
+ 	background: #C0C0C0; 
+}
+
+#users li:nth-child(even) { 
+ 	background: #00FF00; 
+}
+
 #user {
 	padding: 5px;
 }
 
+/* Name Entry */
+#nameEntry {
+	width: 500px;
+	height: 50px;
+	margin-top: 10px;
+	display: block;
+	margin-left: 0px;
+	margin-right: 0px;
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: hidden; 
+}
+
+#sendName {
+	width: 160px;
+	height: 30px;
+	padding: 0px;
+	border: 0px;
+	border-radius: 25px;
+}
+
+#name {
+	width: 300px;
+	height: 30px;
+	font-size: 18px;
+	margin-right: 5px;
+	margin-left: 0px;
+}

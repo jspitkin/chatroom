@@ -16,6 +16,9 @@ io.on('connection', function(socket) {
 	socket.on('chat message', function(msg) {
 		io.emit('chat message', msg);
 	});
+	socket.on('disconnect', function(user){
+    	io.emit('user disconnect', user);
+  	});	
 })
 
 /* Listen for connections on port 3000 */
