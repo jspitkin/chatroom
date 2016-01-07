@@ -1,46 +1,130 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 body {
-	font-size: 13px;
-	font-family: Helvetica, Arial;
+	background-color: black;
+	font-family: "eightBit";
 }
 
-form {
-	background-color: #000;
-	padding: 3px;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+#chatPanel {
+	width: 750px;
+	height: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
 }
 
-form input {
-	border: 0;
-	padding: 10px;
-	width; 90%;
-	margin-right: .5%;
+/* font */
+@font-face {
+    font-family: 'eightBit'; /*a name to be used later*/
+    src: url('/eightBit.TTF'); /*URL to font*/
 }
 
-form button {
-	width: 9%;
-	background: rgb(130, 224, 255);
-	border: none;
-	padding: 10px;
+/* Chat Window */
+#chatWindow {
+	width: 500px;
+	height: 500px;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	border: 2px solid #00FF00;
+	float: left;
+	overflow: auto;
+	overflow-x: hidden; 
 }
 
 #messages {
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
+	padding: 0px;
+	margin: 0px;
 }
 
-#messages li {
-	padding: 5px 10px;
+#messages li:nth-child(odd) { 
+ 	background: #C0C0C0; 
 }
 
-#messages li:nth-child(odd) {
-	background: #eee;
+#messages li:nth-child(even) { 
+ 	background: #00FF00; 
 }
+
+#message {
+ 	font-size: 18px;
+	padding: 5px;
+	margin: 0px;
+}
+
+/* Input Box */
+form {
+	display: inline;
+}
+
+input {
+	border: 2px solid #00FF00;
+	font-family: "eightBit";
+}
+
+#send {
+	width: 300px;
+	height: 30px;
+	font-size: 18px;
+	margin-right: 5px;
+	margin-left: 50px;
+}
+
+button {
+	background-color: #00FF00;
+	font-family: "eightBit";
+}
+
+button:focus {
+	outline:0;
+}
+
+button:hover {
+	background-color: #000;
+	color: #00FF00;
+}
+
+#sendButton {
+	width: 85px;
+	height: 30px;
+	padding: 0px;
+	border: 0px;
+	border-radius: 25px;
+}
+
+#inputBox {
+	width: 500px;
+	height: 50px;
+	margin-top: 10px;
+	display: block;
+	margin-left: 0px;
+	margin-right: 0px;
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: hidden; 
+}
+
+/* Users Window */
+#activeUsers {
+	width: 200px;
+	height: 500px;
+	float: left;
+	margin-left: 10px;
+	border: 2px solid #00FF00;
+}
+
+#users {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-top: 0px;
+}
+
+#users li:first-child {
+	background-color: #C0C0C0;
+	text-align: center;
+	font-size: 24px;
+}
+
+#user {
+	padding: 5px;
+}
+
