@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var users = {};
+
 /* Use public folder for images, css and js */
 app.use(express.static(__dirname + '/public'));
 
@@ -12,13 +14,21 @@ app.get('/', function(req, res){
 });
 
 /* Emit a 'chat message' function to each connected socket */
-io.on('connection', function(socket) {
+io.sockets.on('connection', function(socket) {
+	socket.emit('join room', users);
+
 	socket.on('chat message', function(msg) {
 		io.emit('chat message', msg);
 	});
-	socket.on('disconnect', function(user){
-    	io.emit('user disconnect', user);
+	socket.on('disconnect', function(){
+		var leavingUser = users[socket.id];
+		delete users[socket.id];
+		io.emit('user disconnect', leavingUser, users);
   	});	
+  	socket.on('update users', function(user) {
+  		users[socket.id] = user;
+  		io.emit('update users', user, users);
+  	});
 })
 
 /* Listen for connections on port 3000 */

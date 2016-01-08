@@ -31,6 +31,14 @@ body {
 	overflow-x: hidden; 
 }
 
+#join {
+	background: #000000 !important;
+	color: #00FF00;
+	font-size: 18px;
+	padding: 5px;
+	margin: 0px;
+}
+
 #messages {
 	list-style-type: none;
 	padding: 0px;
@@ -122,18 +130,20 @@ button:hover {
 	margin-top: 0px;
 }
 
-#users li:first-child {
+#usersHeader {
 	background-color: #C0C0C0;
 	text-align: center;
 	font-size: 24px;
+	margin: 0px;
+	padding: 5px;
 }
 
 #users li:nth-child(odd) { 
- 	background: #C0C0C0; 
+ 	background: #00FF00; 
 }
 
 #users li:nth-child(even) { 
- 	background: #00FF00; 
+ 	background: #C0C0C0; 
 }
 
 #user {
