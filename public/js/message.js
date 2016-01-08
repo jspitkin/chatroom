@@ -23,7 +23,7 @@ socket.on('chat message', function(msg) {
 socket.on('user disconnect', function(user, users) {
 	if(user !== null && users !== null)
 	{
-		$('#messages').append($('<li id="message">').text(user + " has left the room"));
+		$('#messages').append($('<li id="join">').text(user + " has left the room"));
 		$('#users').empty();
 		for(var u in users){
     		$('#users').append($('<li id="user">').text(users[u]));
@@ -61,7 +61,7 @@ socket.on('update users', function(user, users) {
 
 /* validates username entry and tells users a new member has joined if the name is good */
 function validUsername() {
-	if (socket.username !== '' && socket.username.length < 8 && !usernameSet) {
+	if (socket.username !== '' && socket.username.length < 9 && !usernameSet) {
 		$('#users').append($('<li id="user">').text(socket.username));
 		$("#users").scrollTop($("#users")[0].scrollHeight);
 		$('#name').val('');

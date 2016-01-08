@@ -1,6 +1,7 @@
 body {
 	background-color: black;
 	font-family: "eightBit";
+	background-image: url("/img/background.jpg");
 }
 
 #chatPanel {
